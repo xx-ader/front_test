@@ -1,0 +1,391 @@
+:root {
+    --primary-color: #013F38;
+    --secondary-color: #027267;
+    --accent-color: #00766A;
+    --background-color: #3DBDA7;
+    --text-color: #3D6975;
+    --border-color: #044D46;
+    --shadow-color: #2C8C87;
+    --my-gradient: linear-gradient(60deg, rgba(1,63,56,1) 0%, rgba(2,114,103,1) 16%, rgba(0,118,106,1) 25%, rgba(61,189,167,1) 40%, rgba(4,77,70,1) 73%);
+    --si-bar: linear-gradient(212deg, rgba(61,105,117,1) 67%, rgba(91,140,153,1) 78%, rgba(61,105,117,1) 89%);    
+
+    /*vars for fonts and text*/
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-size-base: clamp(1.4em , 12vw, 1.5em);
+    --font-weight-semibold: 600;
+    --line-height-base: 21px;
+    --text-align-default: left;
+}
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    /* width: 100%; */
+    height: 100vh;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    /* background-color: var(--primary-color); */
+  }
+
+  /** Mother Div and its childs should be handled here - boxing - sizes ... **/
+
+  .motherDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+  /* side bar **/
+
+  .sideBar {
+    width: 15%;
+    height: 100%;
+    background: rgb(61,105,117);
+    background: var(--si-bar); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 5px solid var(--shadow-color);
+    position: relative;
+  }
+
+  .flex-container {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flex-container .logo {
+    flex: 1 1 auto;
+    
+    /* background-color: red; */
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+    cursor: pointer;
+    transition: max-width 0.3s ease-in-out,
+                max-height 0.3s ease-in-out,
+                border 0.5s ease-in-out;
+    
+}
+.logo:hover{
+    max-width: 100%;
+    max-height: 100%;
+    /* border: 5px solid black; */
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+  .menu {
+    width: 100%;
+    height: 70%;
+    padding: 0 20% 0 20%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+  }
+  
+  .menu li {
+    display: flex;
+    list-style: none;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height-base);
+    text-align: var(--text-align-default);
+    color: white;
+    cursor: pointer;
+    align-items: center;
+    /* position: relative; */
+}
+
+.sideBar ul li p {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    margin-left: 10px;
+}
+.logout {
+    margin-top: 200px;
+}
+.sideBar ul li i {
+    position: relative;
+    font-size: var(--font-size-base);
+    transition: color 0.5s ease;
+    /* background-color: red; */
+}
+
+/* top Side bar */
+
+
+
+/* Main div content */
+
+.dynamic {
+    width: 85%;
+    height: 100%;
+    background: rgb(1,63,56);
+    background: var(--my-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    /* padding-left: 100%; */
+}
+
+.fakeDiv{
+    width: 85%;
+    height: 100%;
+    margin-top: 120%;
+    opacity: 0;
+    position: absolute;
+    background-color: red;
+    transition: margin-top 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.mainDiv {
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    margin-top: 120%;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: margin-top 1s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.topSide {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    /*zaba o shta saba*/
+}
+
+.topSide .helloTitle {
+    width: 75%;
+    font-family: var(--font-family-primary);
+    font-size: 3em;
+    color: rgb(31, 53, 59);
+    /* letter-spacing: 15px; */
+    display: flex;
+    justify-content: left;
+    text-shadow: 0px 4px 10px rgba(61,105,117,1);
+}
+.topSide .spanHolder {
+    margin-left: 5%;
+    letter-spacing: 15px;
+}
+
+.topSide .profilePic {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #00766A;
+    margin-right: 5%;
+    border: 1px solid var(--border-color);
+}
+
+.profIcones {
+    width: 10%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.profIcones .bi-bell .note{
+    width: 10px;
+    height: 10px;
+    background-color: greenyellow;
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.profIcones i {
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    color: white;
+}
+
+.mainSide {
+    width: 100%;
+    height: 90%;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mainSideTop {
+    width: 90%;
+    max-width: 90%;
+    height: 45%;
+    background-image: url(bgTable.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.png {
+    width: 20%;
+    opacity: 0;
+    transition: all 3s ease-out; 
+}
+
+.pngleft, .pngright{
+    opacity: 1;
+    max-width: 100%;
+    height: auto;
+}
+
+.middleMST {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: greenyellow; */
+}
+
+.middleMST h1 {
+    font-family: var(--font-family-primary);
+    font-size: 3em;
+    color: #464667;
+    text-align: center;
+    /* margin-bottom: 50px; */
+}
+.middleMST p {
+    width: 70%;
+    text-align: center;
+    font-size: var(--font-size-base);
+}
+
+/* ANIMATION HELLO REDA */
+
+@keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .bounce {
+    animation: bounceIn 3s ease-out; /* Duration and easing for smooth bounce */
+    /* opacity: 0; Start hidden */
+    animation-fill-mode: forwards; /* Ensure element stays visible after animation */
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  END OF ANIMATION **/
+
+.middleMST #btnMST {
+    width: 200px;
+    height: 50px;
+    background-color: var(--shadow-color);
+    border: 1px solid var(--background-color);
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    opacity: 0.8;
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-semibold);
+    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, box-shadow 4s ease;
+}
+
+.shadBtn {
+    box-shadow: 1px 1px 20px 5px rgba(255, 255, 255, 0.9);
+}
+
+#btnMST:hover {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* .mainSideTop div {
+    width: 95%;
+    height: 100%;
+} */
+
+.mainSideBottom {
+    width: 95%;
+    height: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.mainSideBottom div {
+    width: 45%;
+    height: 100%;
+    background-color: var(--background-color);
+}
+
+
+/* Hover effects */
+
+.sideBar ul li p::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 5px;
+    background-color: var(--background-color);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.sideBar ul li:hover p::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.sideBar ul li:hover i {
+    font-weight: bold;
+    color: var(--primary-color);
+}
