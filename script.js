@@ -1,27 +1,55 @@
 let dynamic = document.getElementsByClassName("dynamic")
+let menu = document.getElementsByClassName("menuBtn")
+let menuActions = [
+  () => dashBoard(),
+  () => game(),
+  () => chat(),
+  () => settings(),
+  () => lougout()
+];
 
-let dashBoardHtm = `
+let ldb = `
 <div class="mainDiv" id="mainDiv">
-    <div class="topSide">
-        <h1 class="helloTitle">Hello
-            <div class="spanHolder"></div>
-        </h1>
-        <div class="profIcones">
-            <i class="bi bi-star"></i>
-            <i class="bi bi-bell"><sup class="note">1</sup></i>
-            <i class="bi bi-bar-chart"></i>
-        </div>
-        <div class="profilePic"></div>
-    </div>
 <div class="mainSide">
     <div class="mainSideTop">
-        <img class="png" src="pngPlayer2.png" alt="">
+    <div class="png">
+        <img class="pngImg pngleft" src="pngPlayer2.png" alt="">
+    </div>
+        <div class="middleMST">
+            <h1>PLANET PONG</h1>
+            <p id="parag">Welcome to Pong Arena, where the classic game comes to life!
+    Get ready to dive into fast-paced, retro-style fun as you challenge
+    friends or play solo. Whether you're here to relive memories 
+    or discover a timeless favorite,
+    you're in for an exciting ride. Let the games begin!</p>
+            <button class="shadBtn" id="btnMST" onclick="game()">JOIN A GAME</button>
+        </div>
+    <div class="png">
+        <img class="pngImg pngright" src="pngPlayer1.png" alt="">
+    </div>
+    </div>
+    <div class="mainSideBottom">
+        <div></div>
+        <div></div>
+    </div>
+</div>
+</div>
+`;
+let dashBoardHtm = `
+<div class="mainDiv" id="mainDiv">
+<div class="mainSide">
+    <div class="mainSideTop">
+    <div class="png">
+    <img class="pngImg" src="pngPlayer2.png" alt="">
+    </div>
         <div class="middleMST">
             <h1>PLANET PONG</h1>
             <p id="parag"></p>
-            <button class="shadBtn" id="btnMST">JOIN A GAME</button>
+            <button class="shadBtn" id="btnMST" onclick="game()">JOIN A GAME</button>
         </div>
-        <img class="png" src="pngPlayer1.png" alt="">
+    <div class="png">
+        <img class="pngImg" src="pngPlayer1.png" alt="">
+    </div>
     </div>
     <div class="mainSideBottom">
         <div></div>
@@ -31,9 +59,9 @@ let dashBoardHtm = `
 </div>
 `
 let gameHtm = `<div class="fakeDiv"></div>`
-let chatHtm = ``
-let settingsHtm = ``
-let logoutHtm = ``
+let chatHtm = `<div class="fakeDiv1"></div>`
+let settingsHtm = `<div class="fakeDiv2"></div>`
+let logoutHtm = `<div class="fakeDiv3"></div>`
 
 
 
@@ -69,21 +97,16 @@ function showTextLetterByLetter(sideBar,btnMST,element, text, speed) {
 
 function setupDashboard()
 {
-  
-
-    let string = "Reda !";
-    let title = document.getElementsByClassName("spanHolder");
-    let pic = document.getElementsByClassName("png")
+  // if (title[0] || title[0] != undefined)
+  //   return
+  // animation
+  let string = "Reda !";
+  let title = document.getElementsByClassName("spanHolder");
+    let pic = document.getElementsByClassName("pngImg")
+    console.log(pic)
     let paragraph = document.getElementById("parag")
     let btnMST = document.getElementById("btnMST")
     let sideBar = document.getElementById("sideBar")
-    
-    // this next var is going to be dynamic to inject in .dynamic div 
-    // and the js part to gonna be injected
-    // let nowContent = document.getElementById("mainDiv")
-
-
-    // nowContent.style.marginBottom = '0%'
     pic[0].classList.add('pngleft','bounce')
     pic[1].classList.add('pngright','bounce')
     func(string, title);
@@ -92,78 +115,109 @@ function setupDashboard()
     friends or play solo. Whether you're here to relive memories 
     or discover a timeless favorite,
     you're in for an exciting ride. Let the games begin!`
-    showTextLetterByLetter(sideBar,btnMST,paragraph, para, 10)
+    showTextLetterByLetter(sideBar,btnMST,paragraph, para, 1)
+}
+
+function showAndHide(nowContent,showOrHide)
+{
+  nowContent.style.marginTop = showOrHide ? '0%' : '120%';
+  nowContent.style.opacity = showOrHide ? '1' : '0';
+}
+
+function replaceHtml(toReplace,by)
+{
+  toReplace.innerHTML = ''
+  toReplace.innerHTML = by
+}
+
+function addSelection(idx)
+{
+  for( let i = 0; i < 5;i++ )
+  {
+    i === idx ? menu[i].classList.add("selected") : menu[i].classList.remove("selected")
+    i === idx ? menu[i].removeEventListener("click", menuActions[i]) : menu[i].addEventListener("click", menuActions[i])
+  }
 }
 
 function dashBoard(){
-  if (dynamic[0].firstElementChild 
-  && dynamic[0].firstElementChild.classList.contains("mainDiv")) {
+  let nowContent = dynamic[0].firstElementChild
+  if (nowContent && nowContent.classList.contains("mainDiv"))
     return;
-  }
-  if (dynamic[0].firstElementChild)
-  {
-    let gg = document.getElementsByClassName("dynamic");
-  let gg1 = gg[0].firstElementChild
-  // console.log(gg1)
-  gg1.style.marginTop = '120%'
-  gg1.style.opacity = '0'
-}
-  // dashBoardHtm.style.marginTop = '120%';
+  if (nowContent)
+    showAndHide(nowContent, 0)
   setTimeout(() => {
-    // dynamic[0].innerHTML = ''; // Clear content after 1 second
-    // dynamic[0].innerHTML = dashBoardHtm
-    dynamic[0].innerHTML = '';
-    dynamic[0].innerHTML = dashBoardHtm
-    let tt = document.getElementsByClassName("mainDiv");
+    replaceHtml(dynamic[0],ldb)
+    let toShow = document.getElementsByClassName("mainDiv");
     setTimeout(function() {
-      tt[0].style.marginTop = '0%';
-      tt[0].style.opacity = '1';
-      setupDashboard()
-      // Code to execute after 1 second
-    }, 200);
-  }, 200);
+      showAndHide(toShow[0],1)
+      // setupDashboard()
+      addSelection(0)
+    }, 100);
+  }, 100);
 }
+
+function helper(nowContent, classN, idx, comp)
+{
+  if (nowContent)
+    showAndHide(nowContent, 0)
+  setTimeout(() => {
+    replaceHtml(dynamic[0], comp)
+    let toShow = document.getElementsByClassName(classN);
+    setTimeout(function() {
+      addSelection(idx)
+      showAndHide(toShow[0],1)
+    }, 100);
+  }, 100);
+}
+
+// Each function Will fetch it's part and delete the old one
+// it can be either with fetching from another html
+// Or just writing html directly as a string and inject it --- will need to inject the JS or the part TOO
 
 function game() {
-  // console.log(nowContent)
-  if (dynamic[0].firstElementChild
-  && dynamic[0].firstElementChild.classList.contains("fakeDiv")) {
+  let nowContent = dynamic[0].firstElementChild
+  if (nowContent && nowContent.classList.contains("fakeDiv"))
     return;
-  }
-  // let gg = document.getElementsByClassName("dynamic");
-  // dynamic[0].firstElementChild.classList.charAt(0).style.marginTop = '120%';
-  let gg = document.getElementsByClassName("dynamic");
-  let gg1 = gg[0].firstElementChild
-  // console.log(gg1)
-  gg1.style.marginTop = '120%'
-  gg1.style.opacity = '0'
-  setTimeout(() => {
-    dynamic[0].innerHTML = ''; // Clear content after 1 second
-    dynamic[0].innerHTML = gameHtm; // Add new content
-    let tt = document.getElementsByClassName("fakeDiv");
-    setTimeout(function() {
-      tt[0].style.marginTop = '0%';
-      tt[0].style.opacity = '1';
-      // Code to execute after 1 second
-    }, 200);
-  }, 200);
+  helper(nowContent, 'fakeDiv', 1, gameHtm)
 }
 
-function clickSetter(array)
+function chat()
 {
-  array[0].addEventListener("click",() => dashBoard())
-  array[1].addEventListener("click",() => game())
-  array[2].addEventListener("click",() => chat())
-  array[3].addEventListener("click",() => settings())
+  let nowContent = dynamic[0].firstElementChild
+  if (nowContent && nowContent.classList.contains("fakeDiv1"))
+    return;
+  helper(nowContent, 'fakeDiv1', 2, chatHtm)
+}
+
+function settings()
+{
+  let nowContent = dynamic[0].firstElementChild
+  if (nowContent && nowContent.classList.contains("fakeDiv2"))
+    return;
+  helper(nowContent, 'fakeDiv2', 3, settingsHtm)
+}
+
+function lougout()
+{
+  let nowContent = dynamic[0].firstElementChild
+  if (nowContent && nowContent.classList.contains("fakeDiv3"))
+    return;
+  helper(nowContent, 'fakeDiv3', 4, logoutHtm)
+}
+
+function clickSetter()
+{
+  menu[0].addEventListener("click",() => dashBoard())
+  menu[1].addEventListener("click",() => game())
+  menu[2].addEventListener("click",() => chat())
+  menu[3].addEventListener("click",() => settings())
+  menu[4].addEventListener("click",() => lougout())
 }
 
 window.onload = function() {
-    let menu = document.getElementsByClassName("menuBtn")
-    clickSetter(menu)
-
-
-    
-
-
-    //here must give each part its event listener on click 
+  replaceHtml(dynamic[0], dashBoardHtm)
+  showAndHide(dynamic[0].firstElementChild, 1)
+  setupDashboard()
+  clickSetter()
+  //here must give each part its event listener on click 
 }
