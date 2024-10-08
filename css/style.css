@@ -25,7 +25,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
   body {
     /* width: 100%; */
@@ -185,18 +185,7 @@
 }
 .fakeDiv1{background-color: black;} .fakeDiv2{background-color: greenyellow;} .fakeDiv3{background-color: grey;}
 
-.mainDiv {
-    position: absolute;
-    width: 85%;
-    height: 100%;
-    margin-top: 120%;
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    transition: margin-top 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
+
 
 .topSide {
     width: 100%;
@@ -271,73 +260,6 @@
     color: white;
 }
 
-.mainSide {
-    width: 100%;
-    height: 95%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.mainSideTop {
-    width: 100%;
-    max-width: 100%;
-    height: 40%;
-    padding: 1%;
-
-    background-image: url(bgTable.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 40px;
-    display: flex;
-    justify-content: space-between;
-}
-.png {
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* opacity: ?0; */
-    /* background-color: red; */
-    /* transition: all 0.1s ease-out;  */
-}
-
-.png img {
-    /* opacity: 0; */
-    width: 70%;
-    height: auto;
-}
-
-.pngleft, .pngright{
-    opacity: 1;
-    max-width: 70%;
-    height: auto;
-}
-
-.middleMST {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    /* background-color: greenyellow; */
-}
-
-.middleMST h1 {
-    font-family: var(--font-family-primary);
-    font-size: var(--font-size-base-big);
-    color: #464667;
-    text-align: center;
-    /* margin-bottom: 50px; */
-}
-.middleMST p {
-    width: 100%;
-    text-align: center;
-    font-size: var(--font-size-base-small);
-}
 
 /* ANIMATION HELLO REDA */
 
@@ -376,47 +298,6 @@
 
 /*  END OF ANIMATION **/
 
-.middleMST #btnMST {
-    width: 50%;
-    height: auto;
-    background-color: var(--shadow-color);
-    border: 1px solid var(--background-color);
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
-    opacity: 0.8;
-    font-family: var(--font-family-primary);
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--font-size-base-medium);
-    transition: color 0.6s ease-in-out, background-color 0.6s ease-in-out, box-shadow 4s ease;
-}
-
-.shadBtn {
-    box-shadow: 1px 1px 20px 5px rgba(255, 255, 255, 0.9);
-}
-
-#btnMST:hover {
-    background-color: var(--background-color);
-    color: var(--primary-color);
-}
-
-/* .mainSideTop div {
-    width: 95%;
-    height: 100%;
-} */
-
-.mainSideBottom {
-    width: 100%;
-    height: 50%;
-    display: flex;
-    justify-content: space-around;
-}
-
-.mainSideBottom div {
-    width: 48%;
-    height: 100%;
-    background-color: var(--background-color);
-}
 
 
 /* Hover effects */

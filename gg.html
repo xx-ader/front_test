@@ -15,28 +15,15 @@
 
   <div class="animated-text" id="text"></div>
 
-  <script>
-    // Function definition goes here (from above)
-    function showTextLetterByLetter(element, text, speed) {
-    let i = 0;
-    element.innerHTML = ''; // Clear any existing content
+  <div id="scripts">
+    <script>
+      let gg = document.getElementById("scripts")
+    
 
-    function typeLetter() {
-      if (i < text.length) {
-        element.innerHTML += text.charAt(i); // Add one character at a time
-        i++;
-        setTimeout(typeLetter, speed); // Call the function again after a delay
-      }
-    }
-
-    typeLetter(); // Start the typing effect
-  }
-    window.onload = function() {
-      const element = document.getElementById('text');
-      const text = "This text will appear letter by letter!";
-      const speed = 100; // Time delay between letters in milliseconds
-      showTextLetterByLetter(element, text, speed);
-    };
-  </script>
+      let scriptElement = document.createElement("script");
+      scriptElement.src = "data.js";
+      gg.appendChild(scriptElement);
+    </script>
+  </div>
 </body>
 </html>
