@@ -66,7 +66,7 @@ function helper(classN, idx, comp)
 // it can be either with fetching from another html
 // Or just writing html directly as a string and inject it --- will need to inject the JS or the part TOO
 
-function game() { helper('fakeDiv', 1, gameHtm) }
+function game() { helper('ticTacGame', 1, gameHtm) }
 function chat() { helper('fakeDiv1', 2, chatHtm) }
 function settings() { helper('fakeDiv2', 3, settingsHtm) }
 function lougout() { helper('fakeDiv3', 4, logoutHtm) }

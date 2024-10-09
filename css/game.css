@@ -1,147 +1,74 @@
-.fakeDiv {
+.ticTacGame {
     width: 85%;
     height: 100%;
-    /* margin-top: 0%; */
+    /* margin-top: 0%;
+    opacity: 1; */
     margin-top: 120%;
     opacity: 0;
-    /* opacity: 1; */
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* background-color: red; */
     color: var(--accent-color);
     font-size: var(--font-size-base-small);
     font-family: var(--font-family-primary);
     transition: margin-top 1.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.tictac {
+.leftDivTicTac {
     width: 45%;
     height: 90%;
-    /* background-color: #fff; */
-    /* border: 1px solid black; */
-    border-radius: 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* local game CSS */
-.lclGameDiv{
+/* List of LATEST GAMES */
+.latestGames {
     width: 100%;
     height: 50%;
-    /* border-radius: 1em; */
     background-color: var(--background-color);
-    /* border: 1% solid black; */
+    position: relative;
+    overflow: hidden;
+}
+
+.latestGames h2 {
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    opacity: 0.3;
+    position: absolute;
 }
-
-.boardlcl {
-    width: 60%;
+.listOfLG {
+    width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1%;
-    align-items: center;
-    justify-items: center;
+    display: block;
+    overflow: auto;
+    position: absolute;
 }
 
-.bSlot {
+.unitLG {
     width: 90%;
-    height: 70%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 0.5vh solid var(--border-color);
-    border-radius: 5%;
-    font-size: 2rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease, border 0.2s ease-in-out;
-}
-.bSlot:hover {
-    border: 1vh solid var(--border-color);
-    background-color: var(--accent-color);
-}
-
-.dashBlcl {
-    width: 30%;
-    height: 100%;
-    background: var(--background-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.dashBlcl div {
-    width: 100%;
-    height: 21%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    /* background-color: #585858; */
-}
-
-.reset {
-    cursor: pointer;
-    background-color: var(--background-color);
-    color: rgb(71, 70, 55);
-    transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
-}
-.reset:hover {
-    color: var(--background-color);
+    height: 20%;
     background-color: var(--primary-color);
-}
-
-.animWinLose {
-    width: 10%;
-    height: 100%;
-    cursor: pointer;
-    background: rgb(1,63,56);
-    background: linear-gradient(180deg, rgba(1,63,56,1) 20%, rgba(61,189,167,1) 40%, rgba(61,189,167,1) 60%, rgba(1,63,56,1) 80%);
-    color: var(--border-color);
-    letter-spacing: 0.2em;
-    transition: letter-spacing 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Customize the easing function */
-
-    /* transition: color 0.5s ease-in-out, letter-spacing 0.5 ease-in-out; */
-}
-
-.animWinLose:hover {
-    color: var(--secondary-color);
-    letter-spacing: 1em;
-}
-
-
-
-.vertical-text {
-    width: 100%;
-    height: 100%;
+    /* margin-top: 1%; */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    writing-mode: vertical-rl; /* Rotates text vertically */
-    text-orientation: mixed;   /* Keeps the letters in normal orientation */
-    transform: rotate(180deg); /* Optional: Rotate text direction if needed */
-    font-size: 20px;
-  }
-
+    opacity: 0.8;
+    margin: 1% auto 1% auto;
+    cursor: pointer;
+}
 
 /* GAME DESCRIPTION PART */
 .gameDescription{
     width: 100%;
     height: 20%;
     background-color: var(--background-color);
-    /* border-radius: 1em; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 1% solid black;
 }
 
 .gameDescription h4, .gameDescription p{
@@ -171,8 +98,7 @@
     height: 28%;
     /* border-radius: 1em; */
     border: 1% solid black;
-    display: flex;
-    
+    display: flex; 
 }
 
 #rMatch, #invFriend {
@@ -271,19 +197,20 @@
     transition: margin-right 0.4s ease-in-out;
 }
 
-.friendList::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
-  }
-  
-  .friendList::-webkit-scrollbar-track {
+.friendList::-webkit-scrollbar, .listOfLG::-webkit-scrollbar {
+    width: 0px;
+    opacity: 0;  /* Width of the scrollbar */
+}
+
+.friendList::-webkit-scrollbar-track, .listOfLG::-webkit-scrollbar-track {
     background: var(--accent-color); /* Background of the scrollbar track */
-  }
-  
-  .friendList::-webkit-scrollbar-thumb {
+}
+
+.friendList::-webkit-scrollbar-thumb, .listOfLG::-webkit-scrollbar-thumb {
     background-color: var(--primary-color); /* Scrollbar color */
     border-radius: 10px; /* Rounded corners for scrollbar */
     border: 2px solid var(--accent-color); /* Adds some space around the thumb */
-  }
+}
 #invFriend:hover .friendList {
     margin-right: 0%;
 }
@@ -306,13 +233,149 @@
 }
 
 /**/
-.pinpon {
+.rightDivTicTac {
     width: 45%;
     height: 90%;
-    background-color: #585858;
-    border: 1px solid black;
-    border-radius: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 
 
+
+/* local game CSS */
+.lclGameDiv{
+    width: 100%;
+    height: 71%;
+    /* border-radius: 1em; */
+    background-color: var(--background-color);
+    /* border: 1% solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.boardlcl {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.bSlot {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 0.5vh solid var(--border-color); */
+    /* border-radius: 5%; */
+    font-size: var(--font-size-base-big);
+    font-weight: bold;
+    transition: background-color 0.3s ease-in;
+}
+.bSlot:hover {
+    /* border: 1vh solid var(--border-color); */
+    background-color: var(--primary-color);
+}
+
+.dashBlcl {
+    width: 30%;
+    height: 100%;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.dashBlcl div {
+    width: 100%;
+    height: 21%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #585858; */
+}
+
+.reset {
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: rgb(71, 70, 55);
+    transition: background-color 0.7s ease-in-out, color 0.7s ease-in-out;
+}
+.reset:hover {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
+
+.animWinLose {
+    width: 10%;
+    height: 100%;
+    cursor: pointer;
+    background: rgb(1,63,56);
+    background: linear-gradient(180deg, rgba(1,63,56,1) 20%, rgba(61,189,167,1) 40%, rgba(61,189,167,1) 60%, rgba(1,63,56,1) 80%);
+    color: var(--border-color);
+    letter-spacing: 0.2em;
+    transition: letter-spacing 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); /* Customize the easing function */
+
+    /* transition: color 0.5s ease-in-out, letter-spacing 0.5 ease-in-out; */
+}
+
+.animWinLose:hover {
+    color: var(--secondary-color);
+    letter-spacing: 1em;
+}
+
+
+
+.vertical-text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    writing-mode: vertical-rl; /* Rotates text vertically */
+    text-orientation: mixed;   /* Keeps the letters in normal orientation */
+    transform: rotate(180deg); /* Optional: Rotate text direction if needed */
+    font-size: 20px;
+  }
+
+
+/* Single player ---- Multiplayer */
+input[type="radio"] {
+    display: none;
+}
+.menuBtnLcl {
+    width: 100%;
+    height: 28%;
+    /* border-radius: 1em; */
+    border: 1% solid black;
+    display: flex; 
+}
+
+.radio-div  {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--background-color);
+}
+
+/* #rb2p {
+} */
+#rb1p {
+    background-color: var(--primary-color);
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+}

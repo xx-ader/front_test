@@ -59,28 +59,12 @@ let dashBoardHtm = `
 </div>
 </div>
 `
-let gameHtm = `<div class="fakeDiv">
-                <div class="tictac">
-                  <div class="lclGameDiv">
-                    <div class="boardlcl">
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                      <div class="bSlot"></div>
-                    </div>
-                    <div class="animWinLose">
-                      <h1 class="vertical-text">START</h1>
-                    </div>
-                    <div class="dashBlcl">
-                      <div class="stats"><h4>X WINS</h4><h1>0</h1></div>
-                      <div class="stats"><h4>DRAWS</h4><h1>0</h1></div>
-                      <div class="stats"><h4>O WINS</h4><h1>0</h1></div>
-                      <div class="reset">Reset</div>
+let gameHtm = `<div class="ticTacGame">
+                <div class="leftDivTicTac">
+                  <div class="latestGames">
+                    <h2>Latest Tic-Tac-Toe Games</h2>
+                    <div class="listOfLG">
+                        
                     </div>
                   </div>
                   <div class="gameDescription">
@@ -124,7 +108,37 @@ let gameHtm = `<div class="fakeDiv">
                     </div>
                   </div>
                 </div>
-                <div class="pinpon"></div>
+                <div class="rightDivTicTac">
+                  <div class="lclGameDiv">
+                    <div class="boardlcl">
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot">o</div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot">x</div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                    </div>
+                    <div class="animWinLose">
+                      <h1 class="vertical-text">START</h1>
+                    </div>
+                    <div class="dashBlcl">
+                      <div class="stats"><h4>X WINS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>DRAWS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>O WINS</h4><h1>0</h1></div>
+                      <div class="reset">Reset</div>
+                    </div>
+                  </div>
+                  <div class="menuBtnLcl">
+                    <input type="radio" id="rb1p" name="playerMode" value="1" checked>
+                    <label for="rb1p" class="radio-div">1 Player</label>
+
+                    <input type="radio" id="rb2p" name="playerMode" value="2">
+                    <label for="rb2p" class="radio-div">2 Players</label>
+                  </div>
+                </div>
               </div>`
 let chatHtm = `<div class="fakeDiv1"></div>`
 let settingsHtm = `<div class="fakeDiv2"></div>`
