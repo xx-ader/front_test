@@ -13,9 +13,9 @@ menu[3].addEventListener("click",settings)
 menu[4].addEventListener("click",lougout)
 
 
-function showAndHide(showOrHide)
+function showAndHide(nowContent,showOrHide)
 {
-  nowContent = dynamic[0].firstChild
+  // nowContent = dynamic[0].firstChild
   // console.log(nowContent)
   nowContent.style.marginTop = showOrHide ? '0%' : '120%';
   nowContent.style.opacity = showOrHide ? '1' : '0';
@@ -25,8 +25,8 @@ function replaceHtml(toReplace,by)
 {
   toReplace.innerHTML = ''
   toReplace.innerHTML = by
-  nowContent = dynamic[0].firstChild
-  console.log(nowContent)
+  // nowContent = dynamic[0].firstChild
+  // console.log(nowContent)
 }
 
 function addSelection(idx)
@@ -41,9 +41,9 @@ function addSelection(idx)
 function dashBoard(){
   setTimeout(() => {
     replaceHtml(dynamic[0],ldb)
-    // let toShow = document.getElementsByClassName("mainDiv");
+    let toShow = document.getElementsByClassName("mainDiv");
     setTimeout(function() {
-      showAndHide(1)
+      showAndHide(toShow[0],1)
       // setupDashboard()
       addSelection(0)
     }, 100);
@@ -54,10 +54,10 @@ function helper(classN, idx, comp)
 {
   setTimeout(() => {
     replaceHtml(dynamic[0], comp)
-    // let toShow = document.getElementsByClassName(classN);
+    let toShow = document.getElementsByClassName(classN);
     setTimeout(function() {
       addSelection(idx)
-      showAndHide(1)
+      showAndHide(toShow[0],1)
     }, 100);
   }, 100);
 }

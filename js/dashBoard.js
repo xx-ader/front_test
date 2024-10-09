@@ -55,6 +55,7 @@ function setupDashboard()
 
 
     replaceHtml(dynamic[0], dashBoardHtm)
-    showAndHide(1)
+    nowContent = dynamic[0].firstElementChild
+    showAndHide(nowContent,1)
     setupDashboard()
     //here must give each part its event listener on click 

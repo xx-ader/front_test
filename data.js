@@ -59,7 +59,73 @@ let dashBoardHtm = `
 </div>
 </div>
 `
-let gameHtm = `<div class="fakeDiv"></div>`
+let gameHtm = `<div class="fakeDiv">
+                <div class="tictac">
+                  <div class="lclGameDiv">
+                    <div class="boardlcl">
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                    </div>
+                    <div class="animWinLose">
+                      <h1 class="vertical-text">START</h1>
+                    </div>
+                    <div class="dashBlcl">
+                      <div class="stats"><h4>X WINS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>DRAWS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>O WINS</h4><h1>0</h1></div>
+                      <div class="reset">Reset</div>
+                    </div>
+                  </div>
+                  <div class="gameDescription">
+                    <h4>Tic-Tac-Toe Game OverView</h4>
+                    <p>In this Tic Tac Toe game, play against
+                       a random opponent or invite a friend. Customize your challenge:
+                       be the first to reach 3, 5, or 7 points to win.
+                    </p>
+                  </div>
+                  <div class="playGround">
+                    <div id="rMatch">
+                      <h3>Random Match</h3>
+                      <div id="btnHolder">
+                        <h2>First To</h2>
+                        <div class="btns">
+                          <button>1</button>
+                          <button>3</button>
+                          <button>5</button>
+                          <button>7</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="invFriend">
+                      <h3>Invite Friend</h3>
+                      <div class="friendList">
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pinpon"></div>
+              </div>`
 let chatHtm = `<div class="fakeDiv1"></div>`
 let settingsHtm = `<div class="fakeDiv2"></div>`
 let logoutHtm = `<div class="fakeDiv3"></div>`

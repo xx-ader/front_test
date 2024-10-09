@@ -1,29 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Letter by Letter Animation</title>
-  <style>
-    .animated-text {
-      font-family: Arial, sans-serif;
-      font-size: 24px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="bootstrap-icons.css">
 </head>
 <body>
+    <div class="motherDiv">
+        <div class="sideBar" id="sideBar">
+            <div class="flex-container">
+                <img src="assets/logo.png" alt="" class="logo">
+            </div>
+            <ul class="menu">
+                <li class="selected menuBtn"><i class="bi bi-speedometer2"></i><p>Dashboard</p></li>
+                <li class="menuBtn"><i class="bi bi-controller"></i> <p>Game</p></li>
+                <li class="menuBtn"><i class="bi bi-chat-dots"></i> <p>Chat</p></li>
+                <li class="menuBtn"><i class="bi bi-gear"></i> <p>Settings</p></li>
+                <li class="menuBtn logout"><i class="bi bi-box-arrow-right"></i> <p>Log-out</p></li>
+            </ul>
+        </div>
+        <div class="all">
+            <div class="topSide">
+                <h1 class="helloTitle"><div>Hello,</div>
+                    <div class="spanHolder"></div>
+                </h1>
+                <div class="profIcones">
+                    <i class="bi bi-star"></i>
+                    <i class="bi bi-bell"><sup class="note"></sup></i>
+                    <i class="bi bi-bar-chart"></i>
+                    <div class="profilePic">
+                        <img src="assets/profilePic.png" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="dynamic">
+              <!-- <div class="fakeDiv">
+                <div class="tictac">
+                  <div class="lclGameDiv">
+                    <div class="boardlcl">
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                      <div class="bSlot"></div>
+                    </div>
+                    <div class="animWinLose">
+                      <h1 class="vertical-text">START</h1>
+                    </div>
+                    <div class="dashBlcl">
+                      <div class="stats"><h4>X WINS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>DRAWS</h4><h1>0</h1></div>
+                      <div class="stats"><h4>O WINS</h4><h1>0</h1></div>
+                      <div class="reset">Reset</div>
+                    </div>
+                  </div>
+                  <div class="gameDescription">
+                    <h4>Tic-Tac-Toe Game OverView</h4>
+                    <p>In this Tic Tac Toe game, play against
+                       a random opponent or invite a friend. Customize your challenge:
+                       be the first to reach 3, 5, or 7 points to win.
+                    </p>
+                  </div>
+                  <div class="playGround">
+                    <div id="rMatch">
+                      <h3>Random Match</h3>
+                      <div id="btnHolder">
+                        <h2>First To</h2>
+                        <div class="btns">
+                          <button>1</button>
+                          <button>3</button>
+                          <button>5</button>
+                          <button>7</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="invFriend">
+                      <h3>Invite Friend</h3>
+                      <div class="friendList">
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        <div class="unitFriend">
+                          <div class="picUF"></div>
+                          <h4 class="nameUF">Reda</h4>
+                        </div>
+                        
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pinpon"></div>
+              </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="js/game.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <div id="myscripts">
 
-  <div class="animated-text" id="text"></div>
-
-  <div id="scripts">
-    <script>
-      let gg = document.getElementById("scripts")
-    
-
-      let scriptElement = document.createElement("script");
-      scriptElement.src = "data.js";
-      gg.appendChild(scriptElement);
-    </script>
-  </div>
+    </div>
 </body>
 </html>
