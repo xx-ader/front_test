@@ -1,10 +1,117 @@
+
+
+
+
+
+
+
+:root {
+    --primary-color: #013F38;
+    --secondary-color: #027267;
+    --accent-color: #00766A;
+    --background-color: #3DBDA7;
+    --text-color: #3D6975;
+    --border-color: #044D46;
+    --shadow-color: #2C8C87;
+    --my-gradient: linear-gradient(60deg, rgba(1,63,56,1) 0%, rgba(2,114,103,1) 16%, rgba(0,118,106,1) 25%, rgba(61,189,167,1) 40%, rgba(4,77,70,1) 73%);
+    --si-bar: linear-gradient(212deg, rgba(61,105,117,1) 67%, rgba(91,140,153,1) 78%, rgba(61,105,117,1) 89%);    
+    --win-lose-lcl: linear-gradient(212deg, rgba(61,105,117,1) 67%, rgba(91,140,153,1) 78%, rgba(61,105,117,1) 89%);    
+
+    /*vars for fonts and text*/
+    --font-family-primary: 'Poppins', sans-serif;
+    --font-size-base-big: 3vw;
+    --font-size-base-large: 2.5vw;
+    --font-size-base-small: 1vw;
+    --font-size-base-medium: 1.5vw;
+    /* clamp(1.4em , 12vw, 1.5em) */
+    --font-weight-semibold: 600;
+    --line-height-base: 21px;
+    --text-align-default: left;
+}
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  body {
+    /* width: 100%; */
+    height: 100vh;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+    /* background-color: var(--primary-color); */
+  }
+
+  /** Mother Div and its childs should be handled here - boxing - sizes ... **/
+
+  .motherDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+
+  .sideBar {
+    width: 20%;
+    height: 100%;
+    background: rgb(61,105,117);
+    background: var(--si-bar); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1% solid var(--shadow-color);
+    position: relative;
+  }
+
+  .dynamic {
+    width: 100%;
+    height: 90%;
+    /* background: rgb(1,63,56); */
+    /* background: var(--my-gradient); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    /* border-left: 2.5px solid rgba(61,105,117,1); */
+    /* padding-left: 100%; */
+}
+
+
+
+
+  .all {
+    width: 100%;
+    height: 100%;
+    background: rgb(1,63,56);
+    background: var(--my-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    border-left: 1% solid rgba(61,105,117,1);
+}
+
+
+
+
+
+
+/**********************************************/
+
 .ticTacGame {
     width: 85%;
     height: 100%;
-    /* margin-top: 0%;
-    opacity: 1; */
-    margin-top: 120%;
-    opacity: 0;
+    margin-top: 0%;
+    opacity: 1;
+    /* margin-top: 120%; */
+    /* opacity: 0; */
     position: absolute;
     display: flex;
     align-items: center;
